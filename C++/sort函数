@@ -1,0 +1,48 @@
+1、sort函数可以三个参数也可以两个参数，必须的头文件#include < algorithm>和using namespace std;
+2、它使用的排序方法是类似于快排的方法，时间复杂度为n*log2(n)
+
+3、Sort函数有三个参数：（第三个参数可不写）
+
+（1）第一个是要排序的数组的起始地址。
+
+（2）第二个是结束的地址（最后一位要排序的地址）
+
+（3）第三个参数是排序的方法，可以是从大到小也可是从小到大，还可以不写第三个参数，此时默认的排序方法是从小到大排序。
+
+默认为从小到大排序，sort( 起始地址，结尾地址，greater<T>())可进行从大到小排序。
+
+以下为三个参数例码：
+// sort algorithm example
+#include <iostream>     // std::cout
+#include <algorithm>    // std::sort
+#include <vector>       // std::vector
+
+bool myfunction (int i,int j) { return (i<j); }//升序排列
+bool myfunction2 (int i,int j) { return (i>j); }//降序排列
+
+struct myclass {
+  bool operator() (int i,int j) { return (i<j);}
+} myobject;
+
+int main () {
+    int myints[8] = {32,71,12,45,26,80,53,33};
+  std::vector<int> myvector (myints, myints+8);               // 32 71 12 45 26 80 53 33
+
+  // using default comparison (operator <):
+  std::sort (myvector.begin(), myvector.begin()+4);           //(12 32 45 71)26 80 53 33
+
+  // using function as comp
+  std::sort (myvector.begin()+4, myvector.end(), myfunction); // 12 32 45 71(26 33 53 80)
+    //std::sort (myints,myints+8,myfunction);不用vector的用法
+
+  // using object as comp
+  std::sort (myvector.begin(), myvector.end(), myobject);     //(12 26 32 33 45 53 71 80)
+
+  // print out content:
+  std::cout << "myvector contains:";
+  for (std::vector<int>::iterator it=myvector.begin(); it!=myvector.end(); ++it)//输出
+    std::cout << ' ' << *it;
+  std::cout << '\n';
+
+  return 0;
+}
