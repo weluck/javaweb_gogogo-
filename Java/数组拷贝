@@ -1,0 +1,17 @@
+在 Java 中，允许将一个数组变量拷贝给
+另一个数组变量。这时， 两个变量将引用同
+一个数组：
+intQ luckyNumbers = smallPrimes; 1uckyNumbers[S] = 12; // now smallPrimes[5] is also 12
+如果希望将一个数组的所有值拷贝到一个新的数组中去，
+就要使用 Arrays 类的 copyOf方法：
+int[] copiedLuckyNumbers = Arrays.copyOf(luckyNumbers , luckyNumbers .length); 第 2 个参数是新数组的长度。这个方法通常用来增加数组的大小：
+luckyNumbers = Arrays.copyOf(luckyNumbers , 2 * luckyNumbers.length);
+如果数组元素是数值型，那么多余的元素将被赋值为 0 ; 如果数组元素是布尔型，则将赋值为 false。
+相反，如果长度小于原始数组的长度，则只拷贝最前面的数据元素。 ($ C++ 注释：Java 数组与 C++ 数组在堆栈上有很大不同， 但基本上与分配在堆（heap) 上
+的数组指针一样。也就是说，
+intD a = new int[100]; // Java
+不同于
+int a[100]; // C++
+而等同于
+int* a = new int[100]; // C++
+Java 中的 [ ] 运算符被预定义为检查数组边界，而且没有指针运算， 即不能通过 a 加 1 得到数组的下一个元素。
