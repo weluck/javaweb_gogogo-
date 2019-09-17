@@ -24,3 +24,75 @@ c++的引用时高阶指针向低阶指针，而java引用是同阶指针指向�
 故java中引用间互相传递可以更改所指向的共同内存，却无法更改各自所存储的地址值，即无法更改各自的引用所指向的方向
 
 且java中只有值传递没有引用传递
+以下两个程序可以证明：
+public class Test2 {
+
+       public static void main(String[] args) {
+
+        StringBuffer sb = new StringBuffer("Hello ");
+
+        System.out.println("Before change, sb = " + sb);
+
+        changeData(sb);
+
+        System.out.println("After changeData(n), sb = " + sb);
+
+    }
+
+      
+
+       public static void changeData(StringBuffer strBuf) {
+
+        strBuf.append("World!");
+
+    }
+
+}
+
+先看输出结果：
+
+Before change, sb = Hello
+
+After changeData(n), sb = Hello World!
+
+从结果来看，sb的值被改变了，那么是不是可以说：对象作为参数传递时，是把对象的引用传递过去，如果引用在方法内被改变了，那么原对象也跟着改变。从上面例子的输出结果来看，这样解释是合理。
+
+现在我们对上面的例子稍加改动一下：
+
+public class Test3 {
+
+       public static void main(String[] args) {
+
+        StringBuffer sb = new StringBuffer("Hello ");
+
+        System.out.println("Before change, sb = " + sb);
+
+        changeData(sb);
+
+        System.out.println("After changeData(n), sb = " + sb);
+
+    }
+
+      
+
+       public static void changeData(StringBuffer strBuf) {
+
+           strBuf = new StringBuffer("Hi ");
+
+           strBuf.append("World!");
+
+    }
+
+}
+
+按照上面例子的经验：对象作为参数传递时，是把对象的引用传递过去，如果引用在方法内被改变了，那么原对象也跟着改变。你会认为应该输出：
+
+Before change, sb = Hello
+
+After changeData(n), sb = Hi World!
+
+但运行一下这个程序，你会发现结果是这样的：
+
+Before change, sb = Hello
+
+After changeData(n), sb = Hello
