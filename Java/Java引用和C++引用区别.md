@@ -1,11 +1,11 @@
 按值调用 （call by value) 表示方法接收的是调用者提供的值。而按引用调用 （ call by reference)
 表示方法接收的是调用者提供的变量地址。一个方法可以修改传递引用所对应的变量值，而不能修改传递值调用所对应的变量值。
 
-java的引用并不是引用，而是隐藏的指针！！！要把java的引用当作指针来看！！！
-
-而c++的引用才是真正的引用
+java的引用并不是引用，而是隐藏的指针！！！要把java的引用当作指针来看！！！而c++的引用才是真正的引用
 
 java的引用只是能操作原内存，不能操作指向内存的指针，而c++的引用不仅是操作原内存，更是操作指向原内存的指针！
+
+java类对象近似C++指针
 
 java数组、类、接口按值传递的时候都是传递对象的地址，也是值传递
 
@@ -29,78 +29,37 @@ c++的引用时高阶指针向低阶指针，而java引用是同阶指针指向�
 故java中引用间互相传递可以更改所指向的共同内存，却无法更改各自所存储的地址值，即无法更改各自的引用所指向的方向
 
 且java中只有值传递没有引用传递
-以下两个程序可以证明：
-public class Test2 {
 
-       public static void main(String[] args) {
-
-        StringBuffer sb = new StringBuffer("Hello ");
-
-        System.out.println("Before change, sb = " + sb);
-
-        changeData(sb);
-
-        System.out.println("After changeData(n), sb = " + sb);
-
-    }
-
-      
-
-       public static void changeData(StringBuffer strBuf) {
-
-        strBuf.append("World!");
-
-    }
-
+以下程序证明：
+public class Main{
+     public static void main(String[] args){
+          Foo f = new Foo("f");
+          changeReference(f); // It won't change the reference!
+          modifyReference(f); // It will modify the object that the reference variable "f" refers to!
+     }
+     public static void changeReference(Foo a){
+          Foo b = new Foo("b");
+          a = b;
+     }
+     public static void modifyReference(Foo c){
+          c.setAttribute("c");
+     }
 }
-
-先看输出结果：
-
-Before change, sb = Hello
-
-After changeData(n), sb = Hello World!
-
-从结果来看，sb的值被改变了，那么是不是可以说：对象作为参数传递时，是把对象的引用传递过去，如果引用在方法内被改变了，那么原对象也跟着改变。从上面例子的输出结果来看，这样解释是合理。
-
-现在我们对上面的例子稍加改动一下：
-
-public class Test3 {
-
-       public static void main(String[] args) {
-
-        StringBuffer sb = new StringBuffer("Hello ");
-
-        System.out.println("Before change, sb = " + sb);
-
-        changeData(sb);
-
-        System.out.println("After changeData(n), sb = " + sb);
-
-    }
-
-      
-
-       public static void changeData(StringBuffer strBuf) {
-
-           strBuf = new StringBuffer("Hi ");
-
-           strBuf.append("World!");
-
-    }
-
-}
-
-按照上面例子的经验：对象作为参数传递时，是把对象的引用传递过去，如果引用在方法内被改变了，那么原对象也跟着改变。你会认为应该输出：
-
-Before change, sb = Hello
-
-After changeData(n), sb = Hi World!
-
-但运行一下这个程序，你会发现结果是这样的：
-
-Before change, sb = Hello
-
-After changeData(n), sb = Hello
-
-此网站例3有详解
+①Foo f = new Foo(“f”);
 ![image1](https://img-blog.csdn.net/20170720153726843?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzMwOTg3MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+②public static void changeReference(Foo a)
+![image2](https://img-blog.csdn.net/20170720153830742?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzMwOTg3MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+③changeReference(f);
+![image3](https://img-blog.csdn.net/20170720153853192?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzMwOTg3MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+④Foo b = new Foo(“b”);
+![image4](https://img-blog.csdn.net/20170720153935862?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzMwOTg3MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+⑤a = b
+![image5](https://img-blog.csdn.net/20170720153959388?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzMwOTg3MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![image6](https://img-blog.csdn.net/20170720154011425?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzMwOTg3MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+⑥c.setAttribute(“c”);
+![image7](https://img-blog.csdn.net/20170720154028603?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzMwOTg3MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
