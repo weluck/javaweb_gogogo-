@@ -31,6 +31,7 @@ c++的引用时高阶指针向低阶指针，而java引用是同阶指针指向�
 且java中只有值传递没有引用传递
 
 以下程序证明：
+```Java
 public class Main{
      public static void main(String[] args){
           Foo f = new Foo("f");
@@ -45,6 +46,7 @@ public class Main{
           c.setAttribute("c");
      }
 }
+```
 ①Foo f = new Foo(“f”);
 ![image1](https://img-blog.csdn.net/20170720153726843?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzMwOTg3MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
