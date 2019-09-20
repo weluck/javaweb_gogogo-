@@ -5,7 +5,7 @@
 返回从给定位置开始的码点。 
 • int offsetByCodePoints(int startlndex, int cpCount) 5.0
 返回从 startlndex 代码点开始，位移 cpCount 后的码点索引。
-• i n t compareTo(String other)
+• int compareTo(String other)
 按照字典顺序，如果字符串位于 other 之前， 返回一个负数；如果字符串位于 other 之 后，返回一个正数；如果两个字符串相等，返回 0。
 • IntStream codePoints() 8
 将这个字符串的码点作为一个流返回。调用 toArray 将它们放在一个数组中。 
@@ -19,6 +19,8 @@
 如果字符串以 suffix 开头或结尾， 则返回 true。 
 •int indexOf(String str) •int indexOf(String str, int fromlndex ) •int indexOf(int cp) •int indexOf(int cp, int fromlndex )
 返回与字符串 str 或代码点 cp 匹配的第一个子串的开始位置。。这个位置从索引 0 或fromlndex 开始计算。 如果在原始串中不存在 str，返回 -1。
+•boolean contain(String str)作用与上相同
+
 •int 1astIndexOf(String str) •Int 1astIndexOf(String str, int fromlndex ) •int lastindexOf(int cp) •int 1astindexOf(int cp, int fromlndex )
 返回与字符串 str 或代码点 cp 匹配的最后一个子串的开始位置。 这个位置从原始串尾端或 fromlndex 开始计算。
 •int 1ength( )
