@@ -15,8 +15,8 @@ ArrayList 类似于 C++ 的 vector 模板。ArrayList 与 vector 都是泛型类
 将数组列表的存储容量削减到当前尺寸。
  • void set(int index，E obj)
 设置数组列表指定位置的元素值， 这个操作将覆盖这个位置的原有内容。
-参数： index 位置（必须介于 0 ~ size()-l 之间）<br>
-obj 新的值
+参数： index 位置（必须介于 0 ~ size()-l 之间）
+obj 新的值<br>
 • E get(int index)
 获得指定位置的元素值。
 参数：index 获得的元素位置（必须介于 0 ~ size()-l 之间）<br> • void add(int index,E obj)
