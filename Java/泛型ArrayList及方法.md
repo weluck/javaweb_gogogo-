@@ -13,6 +13,19 @@ ArrayList 类似于 C++ 的 vector 模板。ArrayList 与 vector 都是泛型类
 参数：capacity 需要的存储容量<br>
 •void trimToSize( )
 将数组列表的存储容量削减到当前尺寸。
+ • void set(int index，E obj)
+设置数组列表指定位置的元素值， 这个操作将覆盖这个位置的原有内容。
+参数： index 位置（必须介于 0 ~ size()-l 之间）<br>
+obj 新的值
+• E get(int index)
+获得指定位置的元素值。
+参数：index 获得的元素位置（必须介于 0 ~ size()-l 之间）<br> • void add(int index,E obj)
+向后移动元素，以便插入元素。
+参数：index 插入位置（必须介于 0 〜 size()-l 之间）<br>
+obj 新元素<br>
+• E removed nt index)
+删除一个元素，并将后面的元素向前移动。被删除的元素由返回值返回。
+参数：index 被删除的元素位置（必须介于 0 〜 size()-l 之间）<br>
 
 java中的length属性是针对数组说的,比如说你声明了一个数组,想知道这个数组的长度则用到了length这个属性.<br>
 java中的length()方法是针对字符串String说的,如果想看这个字符串的长度则用到length()这个方法.<br>
