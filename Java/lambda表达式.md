@@ -1,11 +1,11 @@
 语法格式一 : 无参数，无返回值
-() -> System.out.println("Hello Lambda!");
+  () -> System.out.println("Hello Lambda!");
 
 语法格式二 : 有一个参数，并且无返回值
-(x) -> System.out.println(x)
+  (x) -> System.out.println(x)
 
 语法格式三 : 若只有一个参数，小括号可以省略不写
-x -> System.out.println(x)
+  x -> System.out.println(x)
 
 Consumer<String> con = (x) -> System.out.println(x);
 con.accept("啦啦啦，我是卖报的小行家");
