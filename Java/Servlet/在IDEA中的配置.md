@@ -13,4 +13,4 @@
 
 Servlet 3.0: <br>
 利用注解配置：
-`@WebServlet("虚拟目录")`
+`@WebServlet("资源路径")`
