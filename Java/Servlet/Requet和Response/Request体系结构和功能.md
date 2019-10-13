@@ -75,7 +75,7 @@
 				* request域：代表一次请求的范围，一般用于请求转发的多个资源中共享数据
 				* 方法：
 					1. void setAttribute(String name,Object obj):存储数据
-					2. Object getAttitude(String name):通过键获取值
+					2. Object getAttribute(String name):通过键获取值
 					3. void removeAttribute(String name):通过键移除键值对
 
 			4. 获取ServletContext：
