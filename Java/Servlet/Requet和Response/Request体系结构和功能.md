@@ -42,7 +42,6 @@
 					1. 获取流对象
 						*  BufferedReader getReader()：获取字符输入流，只能操作字符数据
 						*  ServletInputStream getInputStream()：获取字节输入流，可以操作所有类型数据
-							* 在文件上传知识点后讲解
 
 					2. 再从流对象中拿数据
 				
