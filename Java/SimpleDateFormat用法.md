@@ -24,7 +24,7 @@
         
         SimpleDateFormat aDate=new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss");
         SimpleDateFormat bDate=new SimpleDateFormat("yyyy-mmmmmm-dddddd");
-        long now=System.currentTimeMillis();
+        long now=System.currentTimeMillis(); 也可以用 Date now = new Date();
         System.out.println(aDate.format(now));
         System.out.println(bDate.format(now));
         
