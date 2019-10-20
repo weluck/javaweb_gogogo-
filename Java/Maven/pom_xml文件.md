@@ -13,3 +13,17 @@
 （六）<version>定义了Hello Maven项目当前的版本号 1.0-SNAPSHOT 为IDEA默认的初始版本号，随着项目的开发进度，版本号升级为1.1 、2.0 等。
 
 （七）在没有实际的java代码时，我们就可以完整的创建一个Maven项目的pom.xml，这说明了Maven可以使项目对象模型最大程度的与代码相独立，这充分体现了解耦的原则和理念！为开发者节省了时间，大大缩短了项目开发周期。在项目开发到稳定期时，升级版本时，开发者可以不需要修改实际的 java 代码，而是只修改pom.xml，这一特点使Maven被广泛的使用。
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+ 
+    <groupId>com.feiyu.web</groupId>
+    <artifactId>hello-world</artifactId>
+    <version>1.0-SNAPSHOT</version>
+ 
+</project>
+```
