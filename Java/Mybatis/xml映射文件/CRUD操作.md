@@ -65,3 +65,22 @@ databaseId	如果配置了数据库厂商标识（databaseIdProvider），MyBati
 ```
 ## parameterType='map'
 能够通过map传入两个参数来修改有大量属性的表
+```java
+int addUser(Map<String, object> map);
+```
+```xml
+<insert id='addUser' parameterType="map">
+    insert into mybatis.user (id, pwd) values (#{userid}, #{passsword});
+</insert>
+```
+```java
+@Test
+public void addUser() {
+  SqlSession sqlSession = MybatisUtils.getSqlSession();
+  userMapper mapper = sqlSession.getMapper(UserMapper.classs);
+  Map(String, object) map = new HashMap<String, object>();
+  map.put("userid", 5);
+  map.put("password", "2222333");
+  mapper.addUser(map);
+  sqlSession.close();
+```
