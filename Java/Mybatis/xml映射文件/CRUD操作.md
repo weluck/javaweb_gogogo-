@@ -63,3 +63,5 @@ keyProperty	（仅对 insert 和 update 有用）唯一标记一个属性，MyBa
 keyColumn	（仅对 insert 和 update 有用）通过生成的键值设置表中的列名，这个设置仅在某些数据库（像 PostgreSQL）是必须的，当主键列不是表中的第一列的时候需要设置。如果希望使用多个生成的列，也可以设置为逗号分隔的属性名称列表。
 databaseId	如果配置了数据库厂商标识（databaseIdProvider），MyBatis 会加载所有的不带 databaseId 或匹配当前 databaseId 的语句；如果带或者不带的语句都有，则不带的会被忽略。
 ```
+## parameterType='map'
+能够通过map传入两个参数来修改有大量属性的表
