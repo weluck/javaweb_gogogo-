@@ -1,3 +1,4 @@
+## 引入Spring beans
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -20,7 +21,7 @@
 id为唯一标识，class传输入容器的类，<property/>为类的属性赋值，res:引用Spring容器中创建好的对象，value:传入基本数据类型。
 
 ## 有参构造函数实现
-``xml
+```xml
 <bean id="exampleBean" class="examples.ExampleBean">
     <!-- setter injection using the nested ref element -->
     <property name="beanOne">
