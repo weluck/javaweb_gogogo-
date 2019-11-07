@@ -88,3 +88,11 @@ name为参数名
     </property>
 </bean>
 ```
+### Spring自动装填
+```xml
+<!--
+byName: 会自动在容器上下文中查找,和自己对象set方法后面的值对应的beanid!
+byType: 会自动在容器上下文中查找,和自己对象属性类型相同的值对应的beanid!
+-->
+<bean id="" clas="" autowire="   "/>
+```
