@@ -35,3 +35,10 @@ id为唯一标识，class传输入容器的类，<property/>为类的属性赋�
 </bean>
 ```
 name为参数名
+
+## import
+```xml
+<import resource="beans.xml"/>
+<import resource="lol.xml"/>
+```
+导入其他配置文件
