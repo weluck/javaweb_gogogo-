@@ -44,6 +44,16 @@ name为参数名
 导入其他配置文件
 
 ## Dependency Injection
+### p、c命名空间注入
+```xml
+<beans>
+  <!--p命名空间注入,可以直接注入属性的值: property-->
+  <bean id="user" class="cn.ncu.weluck.pojo.User" p:name="moumou" p:age="18"/>
+
+  <!--c命名空间注入,通过构造器注入: construt-args-->
+  <bean id="user2" class="cn.ncu.weluck.pojo.User" c:name="moumou" c:age="18"/>
+<beans/>
+```
 ### collection
 ```xml
 <bean id="moreComplexObject" class="example.ComplexObject">
