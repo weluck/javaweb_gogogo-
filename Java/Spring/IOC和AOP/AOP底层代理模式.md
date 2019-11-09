@@ -47,4 +47,4 @@ public static void main(){}
   * 基于接口--JDK动态代理
   * 基于类: cglib
   * java字节码实现： javasist
-![](https://github.com/weluck/javaweb_gogogo-/blob/master/Java/Spring/%E5%9B%BE%E7%89%87/dymatic%20Proxy.png)
+![](https://github.com/weluck/javaweb_gogogo-/blob/master/Java/Spring/%E5%9B%BE%E7%89%87/dymaticProxy.png)
