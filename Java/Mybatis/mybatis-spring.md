@@ -8,8 +8,8 @@
   </bean>
   
   <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-    <property name="dataLacation" ref="dataSource"/>
-    <property name="configuration" value="classpath:mybatis-config.xml"/>
+    <property name="dataLoacation" ref="dataSource"/>
+    <property name="configlocation" value="classpath:mybatis-config.xml"/>
     <property name=""mapperlocations" value"classpath:cn/ncu/weluck/mapper/UserMapper.xml"
   </bean>
   
