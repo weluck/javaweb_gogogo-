@@ -6,7 +6,7 @@ c++中map的一些方法:
 * empty() 如果map为空则返回true
 * end()   返回指向map末尾的迭代器
 * erase() 删除一个元素
-* find()  查找一个元素
+* find()  查找一个元素  (返回一个迭代器)
 * insert()插入元素
 * max_size()返回可以容纳的最大元素个数
 * size()  返回map中元素的个数
