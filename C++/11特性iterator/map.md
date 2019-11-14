@@ -12,6 +12,7 @@ c++中map的一些方法:
 * size()  返回map中元素的个数
 * swap()  交换两个map
 * containsKey()  是否存在键
+    * unordered_map用find()或count()
 * get_allocator()  返回map的配置器
 * key_comp()       返回比较元素key的函数
 * lower_bound()    返回键值>=给定元素的第一个位置
