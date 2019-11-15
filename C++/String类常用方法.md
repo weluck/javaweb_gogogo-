@@ -1,3 +1,4 @@
+```
 string类的构造函数：
 string(const char *s);    //用c字符串s初始化
 string(int n,char c);     //用n个字符c初始化
@@ -419,3 +420,4 @@ is>>s1>>s2>>s3>>s4;//s1="hello,this",s2="is",s3="a",s4="test"
 ostringstream os;
 os<<s1<<s2<<s3<<s4;
 cout<<os.str();
+```
