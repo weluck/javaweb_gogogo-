@@ -7,25 +7,25 @@ pair<string, int> name_age2(name_age);    // 拷贝构造初始化
 2. 利用first和second对对象进行访问
 3. make_pair生成新的对象
 ```cpp
-		int white = 0;
-		int gray = 1;
-		stack<pair<int, TreeNode*>>s;
-		s.push(make_pair(white,root));
-		while (!s.empty())
-		{
-			int color = s.top().first;
-			TreeNode* t = s.top().second;
-			s.pop();
-			if (t == NULL) continue;
-			if (color == white)
-			{
-				s.push(make_pair(white, t->right));
-				s.push(make_pair(gray, t));
-				s.push(make_pair(white, t->left));
-			}
-			else ans.push_back(t->val);
-		}
-		return ans;
+int white = 0;
+int gray = 1;
+stack<pair<int, TreeNode*>>s;
+s.push(make_pair(white,root));
+while (!s.empty())
+{
+	int color = s.top().first;
+	TreeNode* t = s.top().second;
+	s.pop();
+	if (t == NULL) continue;
+	if (color == white)
+	{
+		s.push(make_pair(white, t->right));
+		s.push(make_pair(gray, t));
+		s.push(make_pair(white, t->left));
+	}
+	else ans.push_back(t->val);
+}
+return ans;
 ```
 5. 通过tie获取pair元素值
 ```cpp
