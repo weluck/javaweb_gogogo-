@@ -22,3 +22,57 @@ jQuery.ajax(...)
            "json": 将服务器端返回的内容转换成相应的JavaScript对象
           "jsonp": JSONP 格式使用 JSONP 形式调用函数时，如 "myurl?callback=?" jQuery 将自动替换 ? 为正确的函数名，以执行回调函数
 ```
+## 实例:
+Controller层，@RestController注解。
+```java
+@RequestMapping("/a2")
+public List<User> ajax2(){
+    List<User> list = new ArrayList<User>();
+    list.add(new User("秦疆1号",3,"男"));
+    list.add(new User("秦疆2号",3,"男"));
+    list.add(new User("秦疆3号",3,"男"));
+    return list; //由于@RestController注解，将list转成json格式返回
+}
+```
+view层
+```
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="获取数据"/>
+<table width="80%" align="center">
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+    </tr>
+    <tbody id="content">
+    </tbody>
+</table>
+
+<script src="${pageContext.request.contextPath}/statics/js/jquery-3.1.1.min.js"></script>
+<script>
+
+    $(function () {
+        $("#btn").click(function () {
+            $.post("${pageContext.request.contextPath}/a2",function (data) {
+                console.log(data)
+                var html="";
+                for (var i = 0; i <data.length ; i++) {
+                    html+= "<tr>" +
+                        "<td>" + data[i].name + "</td>" +
+                        "<td>" + data[i].age + "</td>" +
+                        "<td>" + data[i].sex + "</td>" +
+                        "</tr>"
+                }
+                $("#content").html(html);
+            });
+        })
+    })
+</script>
+</body>
+</html>
+```
