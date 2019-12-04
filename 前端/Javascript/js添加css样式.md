@@ -49,3 +49,14 @@ function fun(){
 		}	
 	}
 ```
+JQuery
+```js
+
+//两种设置disabled属性
+$('#uid').attr("disabled",true);
+$('#uid').attr("disabled","disabled");
+//三种移除disabled属性
+$('#uid').attr("disabled",false);
+$('#uid').removeAttr("disabled");
+$('#uid').attr("disabled","");
+```
