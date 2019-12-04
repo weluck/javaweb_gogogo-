@@ -37,7 +37,7 @@ $("#txtName").addClass("aa");
 8、.css({样式名:"value",样式名:"value",样式名:"value"}):可以多次添加样式
 ```
 
-## 对内置属性进行加删
+## 对内置属性进行加删（别用$("#").disabled=true）
 ```js
 function fun(){
 		var t = document.getElementById('t').value;
