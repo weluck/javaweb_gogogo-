@@ -36,3 +36,16 @@ $("#txtName").addClass("aa");
 
 8、.css({样式名:"value",样式名:"value",样式名:"value"}):可以多次添加样式
 ```
+
+## 对内置属性进行加删
+```js
+function fun(){
+		var t = document.getElementById('t').value;
+		console.log(t);
+		if(t == 1){
+			document.getElementById("btn").disabled=false;
+		} else{
+			document.getElementById("btn").disabled=true;
+		}	
+	}
+```
