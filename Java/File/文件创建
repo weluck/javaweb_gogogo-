@@ -1,0 +1,6 @@
+1. file.exist()<br>
+判断文件是否存在
+2. file.mkdir()<br>
+将path作为文件夹创建
+3. file.createNewFile()<br>
+创建一个文件,不能创建文件夹
