@@ -149,6 +149,8 @@ Obj.wait()，与Obj.notify()必须要与synchronized(Obj)一起使用，也就�
 ⑥设置线程的优先级<br>
 setPriority()，最大为MAX_PRIORITY=10，最小为0.默认为5.<br>
 getPriority(),获取优先级。
+⑥setDeamon()<br>
+thread.setDeamon(true)，即设置为守护线程，默认的都为用户线程
 ## wait和sleep区别
 共同点：
 1. 他们都是在多线程的环境下，都可以在程序的调用处阻塞指定的毫秒数，并返回。
