@@ -178,3 +178,15 @@ thread.setDeamon(true)，即设置为守护线程，默认的都为用户线程
    wait()方法是Object类里的方法；当一个线程执行到wait()方法时，它就进入到一个和该对象相关的等待池中，同时失去（释放）了对象的机锁（暂时失去机锁，wait(long timeout)超时时间到后还需要返还对象锁）；其他线程可以访问；
    　　wait()使用notify或者notifyAlll或者指定睡眠时间来唤醒当前等待池中的线程。
    　　wiat()必须放在synchronized block中，否则会在program runtime时扔出”java.lang.IllegalMonitorStateException“异常。
+
+## wait()虚假唤醒
+当前的线程必须拥有该对象的显示器。 该线程释放此监视器的所有权，并等待另一个线程通知等待该对象监视器的线程通过调用notify方法或notifyAll方法notifyAll 。 然后线程等待，直到它可以重新获得监视器的所有权并恢复执行。 
+
+像在一个参数版本中，中断和虚假唤醒是可能的，并且该方法应该始终在循环中使用： 
+```
+synchronized (obj) {
+         while (<condition does not hold>)
+             obj.wait();
+         ... // Perform action appropriate to condition
+     } 
+```
